@@ -6,19 +6,17 @@ output:
 ---
 
 
-# Reproducible Research Peer Assessment 1
-
 ## Loading and preprocessing the data
 ```{r}
   ## Get dataset
-  dnldzipfile <- "ActivyMonitoringData.zip"
+  dnldzipfile <- "activity.zip"
   # Checking if archieve already exists.
   if (!file.exists(dnldzipfile)){
     fileURL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
     download.file(fileURL, dnldzipfile, method="curl")
   }  
   # Unzip downloaded file into ./ActivyMonitoringData
-  if (!file.exists("ActivyMonitoringData")) { 
+  if (!file.exists("activity.zip")) { 
     unzip(dnldzipfile) 
   }
   activity <- read.csv("./activity.csv" , colClasses = c("numeric", "Date", "numeric"))
